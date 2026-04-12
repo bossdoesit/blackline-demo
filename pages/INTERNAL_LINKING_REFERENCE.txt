@@ -1,0 +1,76 @@
+BLACKLINE DEMO — INTERNAL LINKING REFERENCE
+B.O.S.S. · bossdoesit.com · April 2026
+=====================================================
+
+EVERY PAGE LINKS TO:
+→ /contact (Request a Quote CTA)
+→ /services (Services Overview)
+→ /contractors (For Contractors)
+
+HOMEPAGE ( / )
+→ /services/mitigation-demo
+→ /services/interior-demolition
+→ /services/exterior-demolition
+→ /services/specialty-demo
+→ /contractors
+→ /phoenix-demolition-contractor
+→ /mesa-demolition-contractor
+→ /scottsdale-demolition-contractor
+→ /gilbert-demolition-contractor
+→ /chandler-demolition-contractor
+→ /casa-grande-demolition-contractor
+→ /faq
+→ /contact
+
+SERVICES OVERVIEW ( /services )
+→ All 4 service pages
+→ /contractors
+→ /contact
+
+EACH SERVICE PAGE ( /services/[service] )
+→ /services (parent)
+→ All 3 other service pages
+→ /contractors
+→ /phoenix-demolition-contractor (primary city)
+→ /faq
+→ /contact
+
+CONTRACTOR PAGE ( /contractors )
+→ All 4 service pages
+→ All 6 city pages
+→ /faq
+→ /contact
+
+ABOUT ( /about )
+→ /contractors
+→ /faq
+→ /contact
+→ All 6 city pages
+
+FAQ ( /faq )
+→ /contact
+→ /contractors
+→ All 4 service pages
+
+CONTACT ( /contact )
+→ /services
+→ /contractors
+→ All 6 city pages (sidebar)
+
+EACH CITY PAGE ( /[city]-demolition-contractor )
+→ All 4 service pages (service cards)
+→ /contractors
+→ /faq
+→ /contact
+→ All 5 other city pages (sidebar)
+
+FOOTER ( site-wide )
+→ All 4 service pages
+→ /contractors
+→ All 6 city pages
+→ /about
+→ /faq
+→ /contact
+
+NOTE: Thank-you page ( /thank-you ) carries noindex meta tag.
+Do not link to /thank-you from any indexed page.
