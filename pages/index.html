@@ -227,6 +227,7 @@
         .hero__content {
             position: relative;
             z-index: 2;
+            padding-top: calc(var(--nav-h) + 48px);
             padding-bottom: clamp(64px, 10vh, 110px);
             width: 100%;
         }
@@ -838,7 +839,7 @@
                 min-height: unset;
             }
             .hero__content {
-                padding-top: 48px;
+                padding-top: calc(var(--nav-h) + 64px);
             }
             .services__grid {
                 grid-template-columns: 1fr;
