@@ -835,12 +835,13 @@
             .nav-hamburger { display: flex; }
             .hero {
                 align-items: flex-start;
-                padding-top: 0;
                 height: auto;
-                min-height: 100svh;
+                min-height: 0;
+                padding-bottom: 60px;
             }
             .hero__content {
-                padding-top: calc(var(--nav-h) + 48px);
+                padding-top: calc(72px + 60px) !important;
+                padding-bottom: 48px;
             }
             .services__grid {
                 grid-template-columns: 1fr;
