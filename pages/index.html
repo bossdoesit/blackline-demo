@@ -775,87 +775,33 @@
            FOOTER
         ============================================ */
 
-        .footer {
-            background: var(--dark-2);
-            border-top: 1px solid var(--border);
-            padding: 72px 0 40px;
-        }
+        /* FOOTER TOP STRIP */
+        .footer-strip{background:#141414;padding:16px 0;text-align:center}
+        .footer-strip-text{font-family:var(--condensed);font-size:11px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.45)}
+        .footer-strip-check{color:#BBA882}
 
-        .footer__top {
-            display: grid;
-            grid-template-columns: 1.6fr 1fr 1fr 1fr;
-            gap: 48px;
-            margin-bottom: 60px;
-        }
+        /* FOOTER MAIN */
+        footer{background:#111111;padding:64px 48px 40px}
+        .footer-brand{margin-bottom:48px}
+        .footer-brand-logo{height:48px;width:auto;display:block;margin-bottom:12px}
+        .footer-tagline{font-family:var(--condensed);font-size:10px;font-weight:500;letter-spacing:0.24em;text-transform:uppercase;color:#BBA882;margin-bottom:16px}
+        .footer-contact{display:flex;flex-direction:column;gap:4px}
+        .footer-contact a,.footer-contact span{font-size:13px;font-weight:300;color:rgba(255,255,255,0.45);text-decoration:none;transition:color 0.2s}
+        .footer-contact a:hover{color:var(--white)}
 
-        .footer__logo {
-            font-family: var(--display);
-            font-size: 30px;
-            font-weight: 900;
-            text-transform: uppercase;
-            letter-spacing: 0.03em;
-            margin-bottom: 6px;
-        }
-        .footer__logo span { color: var(--amber); }
+        /* FOOTER COLUMNS */
+        .footer-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:48px}
+        .footer-col-title{font-family:var(--condensed);font-size:10px;font-weight:500;letter-spacing:0.28em;text-transform:uppercase;color:rgba(255,255,255,0.28);margin-bottom:18px}
+        .footer-links{display:flex;flex-direction:column;list-style:none}
+        .footer-links a{font-size:13px;font-weight:300;color:rgba(255,255,255,0.45);text-decoration:none;line-height:2.2;transition:color 0.2s}
+        .footer-links a:hover{color:var(--white)}
 
-        .footer__tagline {
-            font-family: var(--condensed);
-            font-size: 10px;
-            letter-spacing: 0.24em;
-            text-transform: uppercase;
-            color: var(--amber);
-            margin-bottom: 22px;
-        }
-
-        .footer__contact { display: flex; flex-direction: column; gap: 8px; }
-        .footer__contact a {
-            font-size: 13px;
-            font-weight: 300;
-            color: rgba(255,255,255,0.48);
-            transition: color 0.2s;
-        }
-        .footer__contact a:hover { color: var(--white); }
-
-        .footer__col-label {
-            font-family: var(--condensed);
-            font-size: 10px;
-            letter-spacing: 0.28em;
-            text-transform: uppercase;
-            color: rgba(255,255,255,0.28);
-            margin-bottom: 18px;
-        }
-
-        .footer__links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-        .footer__links a {
-            font-size: 13px;
-            color: rgba(255,255,255,0.48);
-            transition: color 0.2s;
-        }
-        .footer__links a:hover { color: var(--white); }
-
-        .footer__bottom {
-            border-top: 1px solid var(--border);
-            padding-top: 28px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 16px;
-            flex-wrap: wrap;
-        }
-
-        .footer__copy {
-            font-size: 11px;
-            color: rgba(255,255,255,0.28);
-            letter-spacing: 0.06em;
-        }
-
-        .footer__credit {
-            font-size: 11px;
-            color: rgba(255,255,255,0.22);
-            letter-spacing: 0.06em;
-        }
-        .footer__credit a { color: rgba(200,144,42,0.45); transition: color 0.2s; }
-        .footer__credit a:hover { color: var(--amber); }
+        /* FOOTER BOTTOM */
+        .footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:28px;margin-top:40px;border-top:1px solid rgba(255,255,255,0.08);flex-wrap:wrap;gap:12px}
+        .footer-copy{font-size:11px;color:rgba(255,255,255,0.28);letter-spacing:0.04em}
+        .footer-credit{font-size:11px;color:rgba(255,255,255,0.28);letter-spacing:0.04em}
+        .footer-credit a{color:rgba(255,255,255,0.28);text-decoration:none;transition:color 0.2s}
+        .footer-credit a:hover{color:var(--white)}
 
         /* ============================================
            RESPONSIVE
@@ -909,7 +855,7 @@
                 grid-template-rows: repeat(3, 240px);
             }
             .faq__inner { grid-template-columns: 1fr; }
-            .footer__top { grid-template-columns: 1fr 1fr; }
+            .footer-cols { grid-template-columns: 1fr 1fr; }
             .hero__cities { display: none; }
         }
 
@@ -963,7 +909,7 @@
                 grid-template-columns: 1fr 1fr;
                 grid-template-rows: repeat(3, 190px);
             }
-            .footer__top { grid-template-columns: 1fr; }
+            .footer-cols { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -1308,53 +1254,56 @@
 </section>
 
 <!-- FOOTER -->
-<footer class="footer">
-    <div class="wrap">
-        <div class="footer__top">
-            <div>
-                <img src="/images/blackline-demo-logo.png" alt="Blackline Demo" style="height:52px;width:auto;margin-bottom:10px">
-                <p class="footer__tagline">Elite Demolition. No Compromise.</p>
-                <div class="footer__contact">
-                    <a href="tel:[PHONE]">[PHONE]</a>
-                    <a href="mailto:[EMAIL]">[EMAIL]</a>
-                    <a>235 W Warner Rd #8, Chandler, AZ 85225</a>
-                </div>
-            </div>
-            <div>
-                <p class="footer__col-label">Services</p>
-                <ul class="footer__links">
-                    <li><a href="/services/mitigation-demo">Mitigation / Demo</a></li>
-                    <li><a href="/services/interior-demolition">Interior Demo</a></li>
-                    <li><a href="/services/exterior-demolition">Exterior Demo</a></li>
-                    <li><a href="/services/specialty-demo">Specialty Demo</a></li>
-                    <li><a href="/contractors">For Contractors</a></li>
-                </ul>
-            </div>
-            <div>
-                <p class="footer__col-label">Cities</p>
-                <ul class="footer__links">
-                    <li><a href="/phoenix-demolition-contractor">Phoenix</a></li>
-                    <li><a href="/mesa-demolition-contractor">Mesa</a></li>
-                    <li><a href="/scottsdale-demolition-contractor">Scottsdale</a></li>
-                    <li><a href="/gilbert-demolition-contractor">Gilbert</a></li>
-                    <li><a href="/chandler-demolition-contractor">Chandler</a></li>
-                    <li><a href="/casa-grande-demolition-contractor">Casa Grande</a></li>
-                </ul>
-            </div>
-            <div>
-                <p class="footer__col-label">Company</p>
-                <ul class="footer__links">
-                    <li><a href="/about">About</a></li>
-                    <li><a href="/faq">FAQ</a></li>
-                    <li><a href="/contact">Request a Quote</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer__bottom">
-            <p class="footer__copy">&copy; 2026 Blackline Demo. All rights reserved. Phoenix, AZ.</p>
-            <p class="footer__credit">SEO &amp; Web by <a href="https://bossdoesit.com">B.O.S.S. &middot; bossdoesit.com</a></p>
-        </div>
+<div class="footer-strip">
+  <span class="footer-strip-text">Licensed &amp; Insured <span class="footer-strip-check">✓</span> &nbsp; Arizona Certified <span class="footer-strip-check">✓</span> &nbsp; B2B-First <span class="footer-strip-check">✓</span> &nbsp; 6 Cities Covered <span class="footer-strip-check">✓</span></span>
+</div>
+<footer role="contentinfo">
+  <div class="footer-brand">
+    <a href="/" aria-label="Blackline Demo home">
+      <img src="/images/blackline-demo-logo.png" alt="Blackline Demo" class="footer-brand-logo">
+    </a>
+    <div class="footer-tagline">Elite Demolition. No Compromise.</div>
+    <div class="footer-contact">
+      <a href="tel:[PHONE]">[PHONE]</a>
+      <a href="mailto:[EMAIL]">[EMAIL]</a>
+      <span>235 W Warner Rd #8, Chandler, AZ 85225</span>
     </div>
+  </div>
+  <div class="footer-cols">
+    <div>
+      <div class="footer-col-title">Services</div>
+      <ul class="footer-links">
+        <li><a href="/services/mitigation-demo">Mitigation / Demo</a></li>
+        <li><a href="/services/interior-demolition">Interior Demo</a></li>
+        <li><a href="/services/exterior-demolition">Exterior Demo</a></li>
+        <li><a href="/services/specialty-demo">Specialty Demo</a></li>
+        <li><a href="/contractors">For Contractors</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Cities</div>
+      <ul class="footer-links">
+        <li><a href="/phoenix-demolition-contractor">Phoenix</a></li>
+        <li><a href="/mesa-demolition-contractor">Mesa</a></li>
+        <li><a href="/scottsdale-demolition-contractor">Scottsdale</a></li>
+        <li><a href="/gilbert-demolition-contractor">Gilbert</a></li>
+        <li><a href="/chandler-demolition-contractor">Chandler</a></li>
+        <li><a href="/casa-grande-demolition-contractor">Casa Grande</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Company</div>
+      <ul class="footer-links">
+        <li><a href="/about">About</a></li>
+        <li><a href="/faq">FAQ</a></li>
+        <li><a href="/contact">Request a Quote</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">&copy; 2026 Blackline Demo. All rights reserved. Chandler, AZ.</span>
+    <span class="footer-credit">SEO &amp; Web by <a href="https://bossdoesit.com" target="_blank" rel="noopener">B.O.S.S. &middot; bossdoesit.com</a></span>
+  </div>
 </footer>
 
 <script>
