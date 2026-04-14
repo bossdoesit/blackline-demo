@@ -886,9 +886,12 @@
             .nav-hamburger { display: flex; }
             .hero {
                 align-items: flex-start;
+                padding-top: var(--nav-h);
+                height: auto;
+                min-height: unset;
             }
             .hero__content {
-                padding-top: calc(var(--nav-h) + 40px);
+                padding-top: 48px;
             }
             .services__grid {
                 grid-template-columns: 1fr;
@@ -912,11 +915,6 @@
 
         @media (max-width: 768px) {
             /* 1. Hero — force single column, full width */
-            .hero {
-                flex-direction: column;
-                height: auto;
-                min-height: unset;
-            }
             .hero__content {
                 display: flex;
                 flex-direction: column;
