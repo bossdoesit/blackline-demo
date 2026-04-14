@@ -863,6 +863,12 @@
 
         @media (max-width: 960px) {
             .nav-links { display: none; }
+            .hero {
+                align-items: flex-start;
+            }
+            .hero__content {
+                padding-top: calc(var(--nav-h) + 40px);
+            }
             .services__grid {
                 grid-template-columns: 1fr;
                 grid-template-rows: repeat(4, 360px);
