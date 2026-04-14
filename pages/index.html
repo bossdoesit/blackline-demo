@@ -781,9 +781,9 @@
         .footer-strip-check{color:#BBA882}
         .footer-creds-mobile{display:none}
 
-        /* FOOTER MAIN */
-        footer{background:#111111;padding:64px 48px 40px}
-        .footer-brand{margin-bottom:48px}
+        /* FOOTER MAIN — desktop: single-row 4-column layout */
+        footer{background:#111111;padding:64px 48px 40px;display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:48px}
+        .footer-brand{margin:0}
         .footer-brand-logo{height:48px;width:auto;display:block;margin-bottom:12px}
         .footer-tagline{font-family:var(--condensed);font-size:10px;font-weight:500;letter-spacing:0.24em;text-transform:uppercase;color:#BBA882;margin-bottom:16px}
         .footer-contact{display:flex;flex-direction:column;gap:4px}
@@ -791,14 +791,14 @@
         .footer-contact a:hover{color:var(--white)}
 
         /* FOOTER COLUMNS */
-        .footer-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:48px}
+        .footer-cols{display:contents}
         .footer-col-title{font-family:var(--condensed);font-size:10px;font-weight:500;letter-spacing:0.25em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:14px}
         .footer-links{display:flex;flex-direction:column;list-style:none}
         .footer-links a{font-size:13px;font-weight:300;color:rgba(255,255,255,0.5);text-decoration:none;line-height:2;transition:color 0.2s}
         .footer-links a:hover{color:var(--white)}
 
         /* FOOTER BOTTOM */
-        .footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:28px;margin-top:40px;border-top:1px solid rgba(255,255,255,0.08);flex-wrap:wrap;gap:12px}
+        .footer-bottom{grid-column:1 / -1;display:flex;justify-content:space-between;align-items:center;padding-top:28px;border-top:1px solid rgba(255,255,255,0.08);flex-wrap:wrap;gap:12px}
         .footer-copy{font-size:11px;color:rgba(255,255,255,0.28);letter-spacing:0.04em}
         .footer-credit{font-size:11px;color:rgba(255,255,255,0.28);letter-spacing:0.04em}
         .footer-credit a{color:rgba(255,255,255,0.28);text-decoration:none;transition:color 0.2s}
@@ -864,10 +864,10 @@
             .footer-strip{display:none}
             .footer-creds-mobile{display:flex;flex-wrap:wrap;gap:12px;margin-top:16px;font-family:var(--condensed);font-size:9.5px;font-weight:500;letter-spacing:0.10em;text-transform:uppercase;color:rgba(255,255,255,0.35)}
             .footer-cred-item{white-space:nowrap}
-            footer{padding:48px 20px 32px}
+            footer{padding:48px 20px 32px;display:block}
             .footer-brand-logo{height:44px}
             .footer-brand{margin-bottom:36px}
-            .footer-cols{grid-template-columns:1fr 1fr;gap:24px}
+            .footer-cols{display:grid;grid-template-columns:1fr 1fr;gap:24px}
             .footer-col--company{grid-column:1 / -1}
             .footer-bottom{flex-direction:column;align-items:flex-start;gap:8px;margin-top:32px;padding-top:24px}
 
