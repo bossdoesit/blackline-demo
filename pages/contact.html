@@ -84,18 +84,24 @@
 <section style="background:var(--off-white);padding:64px 48px" aria-label="Quote request form and contact information">
   <div class="two-col-contact" style="display:grid;grid-template-columns:1fr 360px;gap:52px;align-items:start">
     <div style="background:var(--white);padding:48px 44px">
-      <div style="font-family:var(--font-head);font-size:13px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--tan);margin-bottom:28px">Project Details</div>
-      <p style="font-size:14px;font-weight:300;color:var(--gray-600);margin-bottom:28px;line-height:1.65">This form is connected to Jotform (Form ID: 260985977678081). Replace this mockup layout with the embedded Jotform iFrame code when building in Wix Studio. The form fields below represent the Jotform form structure.</p>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
-        <div><label style="font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--gray-600);display:block;margin-bottom:8px">Full Name *</label><input type="text" placeholder="Your name" aria-label="Full Name" style="width:100%;padding:12px 16px;border:1px solid var(--gray-200);font-family:var(--font-body);font-size:15px;font-weight:300;outline:none;transition:border-color 0.2s" onfocus="this.style.borderColor='var(--tan)'" onblur="this.style.borderColor='var(--gray-200)'"></div><div><label style="font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--gray-600);display:block;margin-bottom:8px">Company Name *</label><input type="text" placeholder="Your company" aria-label="Company Name" style="width:100%;padding:12px 16px;border:1px solid var(--gray-200);font-family:var(--font-body);font-size:15px;font-weight:300;outline:none;transition:border-color 0.2s" onfocus="this.style.borderColor='var(--tan)'" onblur="this.style.borderColor='var(--gray-200)'"></div><div><label style="font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--gray-600);display:block;margin-bottom:8px">Phone Number *</label><input type="tel" placeholder="(480) 000-0000" aria-label="Phone Number" style="width:100%;padding:12px 16px;border:1px solid var(--gray-200);font-family:var(--font-body);font-size:15px;font-weight:300;outline:none;transition:border-color 0.2s" onfocus="this.style.borderColor='var(--tan)'" onblur="this.style.borderColor='var(--gray-200)'"></div><div><label style="font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--gray-600);display:block;margin-bottom:8px">Email Address *</label><input type="email" placeholder="you@company.com" aria-label="Email Address" style="width:100%;padding:12px 16px;border:1px solid var(--gray-200);font-family:var(--font-body);font-size:15px;font-weight:300;outline:none;transition:border-color 0.2s" onfocus="this.style.borderColor='var(--tan)'" onblur="this.style.borderColor='var(--gray-200)'"></div>
-        <div><label style="font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--gray-600);display:block;margin-bottom:8px">Service Needed *</label><select aria-label="Service needed" style="width:100%;padding:12px 16px;border:1px solid var(--gray-200);font-family:var(--font-body);font-size:15px;font-weight:300;background:var(--white);outline:none;appearance:none"><option value="">Select a service…</option><option>Mitigation / Demo</option><option>Interior Demolition</option><option>Exterior Demolition</option><option>Specialty Demo</option><option>Excavation</option><option>Multiple Services</option></select></div>
-        <div><label style="font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--gray-600);display:block;margin-bottom:8px">Project City *</label><select aria-label="Project city" style="width:100%;padding:12px 16px;border:1px solid var(--gray-200);font-family:var(--font-body);font-size:15px;font-weight:300;background:var(--white);outline:none;appearance:none"><option value="">Select a city…</option><option>Phoenix</option><option>Mesa</option><option>Scottsdale</option><option>Gilbert</option><option>Chandler</option><option>Casa Grande</option><option>Other</option></select></div>
-      </div>
-      <div style="margin-top:16px"><label style="font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--gray-600);display:block;margin-bottom:8px">Project Description *</label><textarea rows="5" placeholder="Tell us about your project — scope, timeline, site access, any special requirements..." aria-label="Project description" style="width:100%;padding:12px 16px;border:1px solid var(--gray-200);font-family:var(--font-body);font-size:15px;font-weight:300;resize:vertical;outline:none;transition:border-color 0.2s" onfocus="this.style.borderColor='var(--tan)'" onblur="this.style.borderColor='var(--gray-200)'"></textarea></div>
-      <div style="margin-top:24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;padding-top:24px;border-top:1px solid var(--gray-200)">
-        <div style="font-size:13px;font-weight:300;color:var(--gray-400)">Response within 1 business day.</div>
-        <button style="background:var(--tan);color:var(--black);font-family:var(--font-body);font-size:13px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;padding:16px 40px;border:none;cursor:pointer" aria-label="Submit quote request">Submit My Request →</button>
-      </div>
+      <iframe
+        id="JotFormIFrame-260985977678081"
+        title="Blackline Demo Quote Request"
+        onload="window.parent.scrollTo(0,0)"
+        allowtransparency="true"
+        allow="geolocation; microphone; camera"
+        src="https://form.jotform.com/260985977678081"
+        frameborder="0"
+        style="min-width:100%;max-width:100%;height:539px;border:none;"
+        scrolling="no">
+      </iframe>
+      <script src='https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js'></script>
+      <script>
+        window.jotformEmbedHandler(
+          "iframe[id='JotFormIFrame-260985977678081']",
+          "https://form.jotform.com/"
+        )
+      </script>
     </div>
     <div style="display:flex;flex-direction:column;gap:16px">
       <div style="background:var(--black);padding:32px"><div style="font-family:var(--font-head);font-size:13px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--tan);margin-bottom:16px">Prefer to Call?</div><a href="tel:[PHONE]" style="font-family:var(--font-head);font-size:28px;font-weight:700;color:var(--white);display:block;text-decoration:none" aria-label="Call Blackline Demo">[PHONE]</a><div style="font-size:13px;font-weight:300;color:rgba(255,255,255,0.35);margin-top:6px">Call or text — we answer.</div><div style="margin-top:16px;padding-top:16px;border-top:1px solid rgba(255,255,255,0.08)"><a href="mailto:[EMAIL]" style="font-size:13px;font-weight:300;color:rgba(255,255,255,0.4);text-decoration:none">[EMAIL]</a></div></div>
