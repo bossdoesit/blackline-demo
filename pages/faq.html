@@ -35,14 +35,12 @@
   </ul>
   <a href="tel:[PHONE]" class="nav-phone" aria-label="Call us">[PHONE]</a>
   <a href="/contact" class="nav-cta">Request a Quote</a>
-  <button class="nav-hamburger" aria-label="Open navigation menu" aria-expanded="false" onclick="toggleNav(this)">
+  <button class="nav-hamburger" aria-label="Open navigation menu" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
 </nav>
+
 <div class="nav-mobile" id="navMobile" role="navigation" aria-label="Mobile navigation">
-  <a href="/" style="padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.06);display:flex;align-items:center">
-    <img src="/images/blackline-demo-logo.png" alt="Blackline Demo" style="height:32px;width:auto">
-  </a>
   <a href="/services">Services</a>
   <a href="/contractors">For Contractors</a>
   <a href="/about">About</a>
@@ -50,7 +48,29 @@
   <a href="tel:[PHONE]">[PHONE]</a>
   <a href="/contact" class="nav-mobile-cta">Request a Quote</a>
 </div>
-<script>function toggleNav(btn){var m=document.getElementById('navMobile');var open=m.classList.toggle('open');btn.setAttribute('aria-expanded',open)}</script>
+<div class="nav-mobile-overlay" id="navOverlay"></div>
+<script>
+(function(){
+  var btn=document.querySelector('.nav-hamburger');
+  var menu=document.getElementById('navMobile');
+  var overlay=document.getElementById('navOverlay');
+  function toggle(){
+    var open=menu.classList.toggle('open');
+    btn.classList.toggle('open');
+    overlay.classList.toggle('open');
+    btn.setAttribute('aria-expanded',open);
+  }
+  function close(){
+    menu.classList.remove('open');
+    btn.classList.remove('open');
+    overlay.classList.remove('open');
+    btn.setAttribute('aria-expanded','false');
+  }
+  btn.addEventListener('click',toggle);
+  overlay.addEventListener('click',close);
+  menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',close)});
+})();
+</script>
 <main id="main-content">
 
 <section class="page-hero" aria-labelledby="faq-h1">

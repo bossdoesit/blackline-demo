@@ -861,8 +861,29 @@
            RESPONSIVE
         ============================================ */
 
+        /* HAMBURGER BUTTON */
+        .nav-hamburger{display:none;background:none;border:none;cursor:pointer;padding:6px;margin-left:auto;width:36px;height:36px;position:relative;flex-shrink:0}
+        .nav-hamburger span{display:block;width:24px;height:2px;background:var(--white);position:absolute;left:6px;transition:transform 0.3s,opacity 0.3s}
+        .nav-hamburger span:nth-child(1){top:10px}
+        .nav-hamburger span:nth-child(2){top:17px}
+        .nav-hamburger span:nth-child(3){top:24px}
+        .nav-hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+        .nav-hamburger.open span:nth-child(2){opacity:0}
+        .nav-hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+        /* MOBILE MENU PANEL */
+        .nav-mobile{display:none;position:fixed;top:72px;left:0;right:0;background:#141414;border-bottom:1px solid rgba(255,255,255,0.08);z-index:99;flex-direction:column}
+        .nav-mobile.open{display:flex}
+        .nav-mobile a{display:flex;align-items:center;height:48px;width:100%;font-family:var(--condensed);font-size:13px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.65);text-decoration:none;padding:0 24px;border-bottom:1px solid rgba(255,255,255,0.06);transition:color 0.2s}
+        .nav-mobile a:hover{color:var(--amber)}
+        .nav-mobile .nav-mobile-cta{background:var(--amber);color:var(--black);font-weight:600;letter-spacing:0.08em;border-bottom:none;justify-content:center}
+        .nav-mobile-overlay{display:none;position:fixed;top:0;left:0;right:0;bottom:0;z-index:98}
+        .nav-mobile-overlay.open{display:block}
+
         @media (max-width: 960px) {
             .nav-links { display: none; }
+            .nav-cta { display: none; }
+            .nav-hamburger { display: flex; }
             .hero {
                 align-items: flex-start;
             }
@@ -963,9 +984,43 @@
                 <li><a href="tel:[PHONE]">[PHONE]</a></li>
                 <li><a href="/contact" class="nav-cta">Request a Quote</a></li>
             </ul>
+            <button class="nav-hamburger" aria-label="Open navigation menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
         </div>
     </div>
 </nav>
+<div class="nav-mobile" id="navMobile" role="navigation" aria-label="Mobile navigation">
+  <a href="/services">Services</a>
+  <a href="/contractors">For Contractors</a>
+  <a href="/about">About</a>
+  <a href="/faq">FAQ</a>
+  <a href="tel:[PHONE]">[PHONE]</a>
+  <a href="/contact" class="nav-mobile-cta">Request a Quote</a>
+</div>
+<div class="nav-mobile-overlay" id="navOverlay"></div>
+<script>
+(function(){
+  var btn=document.querySelector('.nav-hamburger');
+  var menu=document.getElementById('navMobile');
+  var overlay=document.getElementById('navOverlay');
+  function toggle(){
+    var open=menu.classList.toggle('open');
+    btn.classList.toggle('open');
+    overlay.classList.toggle('open');
+    btn.setAttribute('aria-expanded',open);
+  }
+  function close(){
+    menu.classList.remove('open');
+    btn.classList.remove('open');
+    overlay.classList.remove('open');
+    btn.setAttribute('aria-expanded','false');
+  }
+  btn.addEventListener('click',toggle);
+  overlay.addEventListener('click',close);
+  menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',close)});
+})();
+</script>
 
 <!-- HERO -->
 <section class="hero">
