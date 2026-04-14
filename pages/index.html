@@ -779,6 +779,7 @@
         .footer-strip{background:#141414;padding:16px 0;text-align:center}
         .footer-strip-text{font-family:var(--condensed);font-size:11px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.45)}
         .footer-strip-check{color:#BBA882}
+        .footer-creds-mobile{display:none}
 
         /* FOOTER MAIN */
         footer{background:#111111;padding:64px 48px 40px}
@@ -791,9 +792,9 @@
 
         /* FOOTER COLUMNS */
         .footer-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:48px}
-        .footer-col-title{font-family:var(--condensed);font-size:10px;font-weight:500;letter-spacing:0.28em;text-transform:uppercase;color:rgba(255,255,255,0.28);margin-bottom:18px}
+        .footer-col-title{font-family:var(--condensed);font-size:10px;font-weight:500;letter-spacing:0.25em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:14px}
         .footer-links{display:flex;flex-direction:column;list-style:none}
-        .footer-links a{font-size:13px;font-weight:300;color:rgba(255,255,255,0.45);text-decoration:none;line-height:2.2;transition:color 0.2s}
+        .footer-links a{font-size:13px;font-weight:300;color:rgba(255,255,255,0.5);text-decoration:none;line-height:2;transition:color 0.2s}
         .footer-links a:hover{color:var(--white)}
 
         /* FOOTER BOTTOM */
@@ -855,11 +856,20 @@
                 grid-template-rows: repeat(3, 240px);
             }
             .faq__inner { grid-template-columns: 1fr; }
-            .footer-cols { grid-template-columns: 1fr 1fr; }
             .hero__cities { display: none; }
         }
 
         @media (max-width: 768px) {
+            /* Footer mobile */
+            .footer-strip{display:none}
+            .footer-creds-mobile{display:block;margin-top:16px;font-family:var(--condensed);font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.35);line-height:1.8}
+            footer{padding:48px 20px 32px}
+            .footer-brand-logo{height:44px}
+            .footer-brand{margin-bottom:36px}
+            .footer-cols{grid-template-columns:1fr 1fr;gap:24px}
+            .footer-col--company{grid-column:1 / -1}
+            .footer-bottom{flex-direction:column;align-items:flex-start;gap:8px;margin-top:32px;padding-top:24px}
+
             /* 1. Hero — force single column, full width */
             .hero__content {
                 display: flex;
@@ -909,7 +919,6 @@
                 grid-template-columns: 1fr 1fr;
                 grid-template-rows: repeat(3, 190px);
             }
-            .footer-cols { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -1268,9 +1277,10 @@
       <a href="mailto:[EMAIL]">[EMAIL]</a>
       <span>235 W Warner Rd #8, Chandler, AZ 85225</span>
     </div>
+    <div class="footer-creds-mobile">Licensed &amp; Insured <span class="footer-strip-check">✓</span> &nbsp; Arizona Certified <span class="footer-strip-check">✓</span> &nbsp; B2B-First <span class="footer-strip-check">✓</span> &nbsp; 6 Cities <span class="footer-strip-check">✓</span></div>
   </div>
   <div class="footer-cols">
-    <div>
+    <div class="footer-col footer-col--services">
       <div class="footer-col-title">Services</div>
       <ul class="footer-links">
         <li><a href="/services/mitigation-demo">Mitigation / Demo</a></li>
@@ -1280,7 +1290,7 @@
         <li><a href="/contractors">For Contractors</a></li>
       </ul>
     </div>
-    <div>
+    <div class="footer-col footer-col--cities">
       <div class="footer-col-title">Cities</div>
       <ul class="footer-links">
         <li><a href="/phoenix-demolition-contractor">Phoenix</a></li>
@@ -1291,7 +1301,7 @@
         <li><a href="/casa-grande-demolition-contractor">Casa Grande</a></li>
       </ul>
     </div>
-    <div>
+    <div class="footer-col footer-col--company">
       <div class="footer-col-title">Company</div>
       <ul class="footer-links">
         <li><a href="/about">About</a></li>

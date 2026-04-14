@@ -128,6 +128,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--black);heig
 .footer-strip{background:#141414;padding:16px 0;text-align:center}
 .footer-strip-text{font-family:var(--font-head);font-size:11px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.45)}
 .footer-strip-check{color:#BBA882}
+.footer-creds-mobile{display:none}
 
 /* FOOTER MAIN */
 footer{background:#111111;padding:64px 48px 40px}
@@ -140,9 +141,9 @@ footer{background:#111111;padding:64px 48px 40px}
 
 /* FOOTER COLUMNS */
 .footer-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:48px}
-.footer-col-title{font-family:var(--font-head);font-size:10px;font-weight:500;letter-spacing:0.28em;text-transform:uppercase;color:rgba(255,255,255,0.28);margin-bottom:18px}
+.footer-col-title{font-family:var(--font-head);font-size:10px;font-weight:500;letter-spacing:0.25em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:14px}
 .footer-links{display:flex;flex-direction:column;list-style:none}
-.footer-links a{font-size:13px;font-weight:300;color:rgba(255,255,255,0.45);text-decoration:none;line-height:2.2;transition:color 0.2s}
+.footer-links a{font-size:13px;font-weight:300;color:rgba(255,255,255,0.5);text-decoration:none;line-height:2;transition:color 0.2s}
 .footer-links a:hover{color:var(--white)}
 
 /* FOOTER BOTTOM */
@@ -162,7 +163,7 @@ footer{background:#111111;padding:64px 48px 40px}
   .page-hero{padding:112px 24px 60px}
   .two-col{grid-template-columns:1fr;gap:44px}
   .four-col{grid-template-columns:repeat(2,1fr)}
-  .footer-cols{grid-template-columns:1fr 1fr;gap:40px}
+  .footer-cols{grid-template-columns:repeat(3,1fr);gap:40px}
   .cta-band{padding:52px 24px}
   .cta-band-inner{grid-template-columns:1fr;gap:28px}
   .divider-line{margin:0 24px}
@@ -180,6 +181,17 @@ footer{background:#111111;padding:64px 48px 40px}
   .faq-grid{grid-template-columns:1fr!important;gap:40px!important}
   .process-step{grid-template-columns:40px 1fr;gap:20px}
 }
+@media (max-width:768px){
+  /* Footer mobile layout */
+  .footer-strip{display:none}
+  .footer-creds-mobile{display:block;margin-top:16px;font-family:var(--font-head);font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.35);line-height:1.8}
+  footer{padding:48px 20px 32px}
+  .footer-brand-logo{height:44px}
+  .footer-brand{margin-bottom:36px}
+  .footer-cols{grid-template-columns:1fr 1fr;gap:24px}
+  .footer-col--company{grid-column:1 / -1}
+  .footer-bottom{flex-direction:column;align-items:flex-start;gap:8px;margin-top:32px;padding-top:24px}
+}
 @media (max-width:640px){
   .section{padding:52px 20px}
   .page-hero{padding:100px 20px 52px}
@@ -188,8 +200,6 @@ footer{background:#111111;padding:64px 48px 40px}
   .four-col{grid-template-columns:1fr}
   .hero-actions{flex-direction:column;align-items:flex-start;gap:12px}
   .hero-actions .btn-primary,.hero-actions .btn-ghost-white{width:100%;text-align:center}
-  .footer-cols{grid-template-columns:1fr;gap:32px}
-  footer{padding:48px 20px 32px}
   .footer-bottom{flex-direction:column;align-items:flex-start;gap:8px}
   .cta-band-inner .btn-primary,.cta-band-inner .btn-dark,.cta-band-inner .btn-outline-tan{width:100%;text-align:center}
   .breadcrumb{gap:6px}
