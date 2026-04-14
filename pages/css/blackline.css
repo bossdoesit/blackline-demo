@@ -184,7 +184,7 @@ footer{background:#111111;padding:64px 48px 40px}
 @media (max-width:768px){
   /* Footer mobile layout */
   .footer-strip{display:none}
-  .footer-creds-mobile{display:flex;flex-wrap:wrap;gap:12px;margin-top:16px;font-family:var(--font-head);font-size:9px;font-weight:500;letter-spacing:0.10em;text-transform:uppercase;color:rgba(255,255,255,0.35)}
+  .footer-creds-mobile{display:flex;flex-wrap:wrap;gap:12px;margin-top:16px;font-family:var(--font-head);font-size:9.5px;font-weight:500;letter-spacing:0.10em;text-transform:uppercase;color:rgba(255,255,255,0.35)}
   .footer-cred-item{white-space:nowrap}
   footer{padding:48px 20px 32px}
   .footer-brand-logo{height:44px}
