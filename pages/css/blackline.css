@@ -1,5 +1,5 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--black:#0C0C0C;--black-soft:#141414;--black-mid:#1E1E1E;--white:#FFFFFF;--off-white:#F7F5F2;--tan:#A89881;--tan-light:#C4B49E;--tan-dark:#8A7B66;--gray-100:#F2F0ED;--gray-200:#E2E0DC;--gray-400:#9C9890;--gray-600:#6B6760;--gray-800:#3A3835;--font-head:'Barlow Condensed',sans-serif;--font-body:'Barlow',sans-serif}
+:root{--black:#0C0C0C;--black-soft:#141414;--black-mid:#1E1E1E;--white:#FFFFFF;--off-white:#F7F5F2;--tan:#A89881;--tan-light:#C4B49E;--tan-dark:#8A7B66;--gray-100:#F2F0ED;--gray-200:#E2E0DC;--gray-400:#9C9890;--gray-600:#6B6760;--gray-800:#3A3835;--display:'Big Shoulders Display',sans-serif;--font-head:'Barlow Condensed',sans-serif;--font-body:'Barlow',sans-serif;--condensed:'Barlow Condensed',sans-serif}
 html{scroll-behavior:smooth}
 body{font-family:var(--font-body);background:var(--white);color:var(--black);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
 
