@@ -851,7 +851,7 @@
             }
             .why__visual { min-height: 380px; }
             .why__visual-fade {
-                background: linear-gradient(to bottom, transparent 55%, var(--dark));
+                background: linear-gradient(to bottom, transparent 40%, #141414 100%);
             }
             .cities__grid {
                 grid-template-columns: repeat(2, 1fr);
@@ -859,6 +859,16 @@
             }
             .faq__inner { grid-template-columns: 1fr; }
             .hero__cities { display: none; }
+
+            /* Lighten overlays on mobile */
+            .svc__overlay {
+                background: linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.35) 50%, rgba(0,0,0,0.05) 100%);
+            }
+            .svc__bg { opacity: 0.9; }
+            .city__overlay { background: rgba(0,0,0,0.3); }
+            .city__bg { opacity: 0.9; }
+            .gc-band__overlay { background: rgba(0,0,0,0.75); }
+            .final__overlay { background: rgba(0,0,0,0.78); }
         }
 
         @media (max-width: 768px) {
