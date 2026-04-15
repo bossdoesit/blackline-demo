@@ -21,6 +21,81 @@
   <link rel="canonical" href="https://www.blacklinedemo.com/contact">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@400;600;700;800;900&family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/blackline.css">
+<style>
+  .contact-form-wrap {
+    background: #1a1a1a;
+    padding: 48px 44px;
+    border: 1px solid rgba(255,255,255,0.12);
+  }
+  .contact-form-wrap label {
+    display: block;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 8px;
+  }
+  .contact-form-wrap .form-group {
+    margin-bottom: 24px;
+  }
+  .contact-form-wrap input,
+  .contact-form-wrap select,
+  .contact-form-wrap textarea {
+    display: block;
+    width: 100%;
+    background: #242424;
+    color: #ffffff;
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 14px 16px;
+    font-size: 15px;
+    font-family: 'Barlow', sans-serif;
+    outline: none;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+  .contact-form-wrap input:focus,
+  .contact-form-wrap select:focus,
+  .contact-form-wrap textarea:focus {
+    border-color: #BBA882;
+  }
+  .contact-form-wrap select option {
+    background: #242424;
+    color: #ffffff;
+  }
+  .contact-form-wrap textarea {
+    resize: vertical;
+    min-height: 140px;
+  }
+  #submit-btn {
+    display: block;
+    width: 100%;
+    background: #BBA882;
+    color: #000000;
+    border: none;
+    padding: 18px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+  #submit-btn:hover { background: #D4C4A8; }
+  #form-success {
+    color: #BBA882;
+    font-size: 16px;
+    padding: 24px;
+    border-left: 3px solid #BBA882;
+    margin-top: 24px;
+  }
+  #form-error {
+    color: #e74c3c;
+    font-size: 14px;
+    margin-top: 16px;
+  }
+</style>
 </head>
 <body>
 <a href="#main-content" class="skip-nav" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:999;background:var(--tan);color:var(--black);padding:8px 16px;font-weight:600;font-size:14px">Skip to main content</a>
@@ -81,23 +156,9 @@
   <h1 id="contact-h1">Request a Quote — We Respond Within <em>1 Business Day.</em></h1>
   <p>Fill out the form below with your project details and we'll get back to you with a clear response. If your project is urgent, call us directly.</p>
 </section>
-<section style="background:var(--off-white);padding:64px 48px" aria-label="Quote request form and contact information">
+<section style="background:#0a0a0a;padding:64px 48px" aria-label="Quote request form and contact information">
   <div class="two-col-contact" style="display:grid;grid-template-columns:1fr 360px;gap:52px;align-items:start">
-    <div style="background:#1a1a1a;padding:48px 44px;border:1px solid rgba(255,255,255,0.1)">
-      <style>
-        #quote-form .form-group{margin-bottom:24px !important;display:block !important}
-        #quote-form label{display:block !important;font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.7) !important;margin-bottom:8px !important}
-        #quote-form input[type="text"],#quote-form input[type="tel"],#quote-form input[type="email"],#quote-form select,#quote-form textarea{background:#2a2a2a !important;color:#ffffff !important;border:1px solid rgba(255,255,255,0.25) !important;padding:14px 16px !important;width:100% !important;font-size:15px !important;display:block !important;font-family:'Barlow',sans-serif;font-weight:300;border-radius:0;outline:none;transition:border-color 0.2s;box-sizing:border-box}
-        #quote-form input:focus,#quote-form select:focus,#quote-form textarea:focus{border:1px solid #BBA882 !important}
-        #quote-form select{appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path fill='%23BBA882' d='M6 8L0 0h12z'/></svg>") !important;background-repeat:no-repeat !important;background-position:right 16px center !important;padding-right:40px !important}
-        #quote-form textarea{resize:vertical;font-family:'Barlow',sans-serif}
-        #quote-form ::placeholder{color:rgba(255,255,255,0.4)}
-        #submit-btn{display:block !important;width:100% !important;background:#BBA882 !important;color:#000000 !important;padding:18px !important;cursor:pointer !important;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:15px;letter-spacing:0.18em;text-transform:uppercase;border:none;border-radius:0;transition:background 0.2s;margin-top:8px}
-        #submit-btn:hover{background:#D4C4A8 !important}
-        #submit-btn:disabled{opacity:0.6;cursor:not-allowed !important}
-        #form-success{color:#BBA882;font-size:16px;font-weight:300;line-height:1.6;padding:24px;border-left:3px solid #BBA882;background:#2a2a2a;margin-top:16px}
-        #form-error{color:#e74c3c;font-size:14px;font-weight:300;margin-top:16px;padding:12px 16px;background:rgba(231,76,60,0.08);border-left:3px solid #e74c3c}
-      </style>
+    <div class="contact-form-wrap">
       <form action="https://api.web3forms.com/submit" method="POST" id="quote-form">
         <input type="hidden" name="access_key" value="b1968e4f-a691-484a-af0e-36099d42f643">
         <input type="hidden" name="subject" value="New Quote Request — Blackline Demo">
