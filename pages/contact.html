@@ -257,7 +257,7 @@
         <input type="hidden" name="access_key" value="b1968e4f-a691-484a-af0e-36099d42f643">
         <input type="hidden" name="subject" value="New Quote Request — Blackline Demo">
         <input type="hidden" name="from_name" value="Blackline Demo Website">
-        <input type="hidden" name="redirect" value="https://www.blacklinedemo.com/thanks">
+        <input type="hidden" name="redirect" value="https://blackline-demo.pages.dev/thanks">
         <input type="checkbox" name="botcheck" style="display:none">
 
         <div class="form-group">
@@ -313,53 +313,6 @@
 
         <button type="submit" id="submit-btn">Submit My Request →</button>
       </form>
-
-      <div id="form-success" style="display:none">
-        Your request was received. We'll be in touch within 1 business day. If your project is urgent, call us directly at 602.516.9180.
-      </div>
-
-      <div id="form-error" style="display:none">
-        Something went wrong. Please call us directly at 602.516.9180.
-      </div>
-
-      <script>
-        (function(){
-          const form = document.getElementById('quote-form');
-          const btn = document.getElementById('submit-btn');
-          const success = document.getElementById('form-success');
-          const error = document.getElementById('form-error');
-
-          form.addEventListener('submit', async function(e) {
-            e.preventDefault();
-            error.style.display = 'none';
-            btn.textContent = 'Sending...';
-            btn.disabled = true;
-
-            const data = new FormData(form);
-
-            try {
-              const res = await fetch('https://api.web3forms.com/submit', {
-                method: 'POST',
-                body: data
-              });
-              const json = await res.json();
-
-              if (json.success) {
-                form.style.display = 'none';
-                success.style.display = 'block';
-              } else {
-                error.style.display = 'block';
-                btn.textContent = 'Submit My Request →';
-                btn.disabled = false;
-              }
-            } catch(err) {
-              error.style.display = 'block';
-              btn.textContent = 'Submit My Request →';
-              btn.disabled = false;
-            }
-          });
-        })();
-      </script>
     </div>
 
     <aside class="contact-sidebar" aria-label="Contact information">
