@@ -83,24 +83,127 @@
 </section>
 <section style="background:var(--off-white);padding:64px 48px" aria-label="Quote request form and contact information">
   <div class="two-col-contact" style="display:grid;grid-template-columns:1fr 360px;gap:52px;align-items:start">
-    <div style="background:var(--white);padding:48px 44px">
-      <iframe
-        id="JotFormIFrame-260985977678081"
-        title="Blackline Demo Quote Request"
-        onload="window.parent.scrollTo(0,0)"
-        allowtransparency="true"
-        allow="geolocation; microphone; camera"
-        src="https://form.jotform.com/260985977678081?isIframeEmbed=1"
-        frameborder="0"
-        style="min-width:100%;max-width:100%;height:800px;border:none;"
-        scrolling="no">
-      </iframe>
-      <script src='https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js'></script>
+    <div style="background:#141414;padding:48px 44px">
+      <style>
+        #quote-form .form-group{margin-bottom:24px}
+        #quote-form label{display:block;font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:8px}
+        #quote-form input[type="text"],#quote-form input[type="tel"],#quote-form input[type="email"],#quote-form select,#quote-form textarea{width:100%;background:#1a1a1a;border:1px solid rgba(255,255,255,0.12);color:#ffffff;padding:14px 16px;font-family:'Barlow',sans-serif;font-size:15px;font-weight:300;border-radius:0;outline:none;transition:border-color 0.2s;box-sizing:border-box}
+        #quote-form input:focus,#quote-form select:focus,#quote-form textarea:focus{border:1px solid #BBA882}
+        #quote-form select{appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path fill='%23BBA882' d='M6 8L0 0h12z'/></svg>");background-repeat:no-repeat;background-position:right 16px center;padding-right:40px}
+        #quote-form textarea{resize:vertical;font-family:'Barlow',sans-serif}
+        #quote-form ::placeholder{color:rgba(255,255,255,0.3)}
+        #submit-btn{width:100%;background:#BBA882;color:#000000;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:15px;letter-spacing:0.18em;text-transform:uppercase;padding:18px;border:none;border-radius:0;cursor:pointer;transition:background 0.2s;margin-top:8px}
+        #submit-btn:hover{background:#D4C4A8}
+        #submit-btn:disabled{opacity:0.6;cursor:not-allowed}
+        #form-success{color:#BBA882;font-size:16px;font-weight:300;line-height:1.6;padding:24px;border-left:3px solid #BBA882;background:#1a1a1a}
+        #form-error{color:#e74c3c;font-size:14px;font-weight:300;margin-top:16px;padding:12px 16px;background:rgba(231,76,60,0.08);border-left:3px solid #e74c3c}
+      </style>
+      <form action="https://api.web3forms.com/submit" method="POST" id="quote-form">
+        <input type="hidden" name="access_key" value="b1968e4f-a691-484a-af0e-36099d42f643">
+        <input type="hidden" name="subject" value="New Quote Request — Blackline Demo">
+        <input type="hidden" name="from_name" value="Blackline Demo Website">
+        <input type="hidden" name="redirect" value="false">
+        <input type="checkbox" name="botcheck" style="display:none">
+
+        <div class="form-group">
+          <label>Full Name *</label>
+          <input type="text" name="name" required placeholder="First and Last Name">
+        </div>
+
+        <div class="form-group">
+          <label>Company Name *</label>
+          <input type="text" name="company" required placeholder="Your Company">
+        </div>
+
+        <div class="form-group">
+          <label>Phone Number *</label>
+          <input type="tel" name="phone" required placeholder="(000) 000-0000">
+        </div>
+
+        <div class="form-group">
+          <label>Email Address *</label>
+          <input type="email" name="email" required placeholder="you@company.com">
+        </div>
+
+        <div class="form-group">
+          <label>Service Needed *</label>
+          <select name="service" required>
+            <option value="" disabled selected>Select a service...</option>
+            <option>Mitigation / Demo</option>
+            <option>Interior Demolition</option>
+            <option>Exterior Demolition</option>
+            <option>Specialty Demo</option>
+            <option>Multiple Services</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Project City *</label>
+          <select name="city" required>
+            <option value="" disabled selected>Select a city...</option>
+            <option>Phoenix</option>
+            <option>Mesa</option>
+            <option>Scottsdale</option>
+            <option>Gilbert</option>
+            <option>Chandler</option>
+            <option>Casa Grande</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Project Description *</label>
+          <textarea name="message" required rows="5" placeholder="Describe your project scope, timeline, and any relevant details..."></textarea>
+        </div>
+
+        <button type="submit" id="submit-btn">Submit My Request →</button>
+
+        <div id="form-success" style="display:none">
+          Your request was received. We'll be in touch within 1 business day. If your project is urgent, call us directly at 602.516.9180.
+        </div>
+
+        <div id="form-error" style="display:none">
+          Something went wrong. Please call us directly at 602.516.9180.
+        </div>
+      </form>
+
       <script>
-        window.jotformEmbedHandler(
-          "iframe[id='JotFormIFrame-260985977678081']",
-          "https://form.jotform.com/"
-        )
+        (function(){
+          const form = document.getElementById('quote-form');
+          const btn = document.getElementById('submit-btn');
+          const success = document.getElementById('form-success');
+          const error = document.getElementById('form-error');
+
+          form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            error.style.display = 'none';
+            btn.textContent = 'Sending...';
+            btn.disabled = true;
+
+            const data = new FormData(form);
+
+            try {
+              const res = await fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                body: data
+              });
+              const json = await res.json();
+
+              if (json.success) {
+                form.style.display = 'none';
+                success.style.display = 'block';
+              } else {
+                error.style.display = 'block';
+                btn.textContent = 'Submit My Request →';
+                btn.disabled = false;
+              }
+            } catch(err) {
+              error.style.display = 'block';
+              btn.textContent = 'Submit My Request →';
+              btn.disabled = false;
+            }
+          });
+        })();
       </script>
     </div>
     <div style="display:flex;flex-direction:column;gap:16px">
