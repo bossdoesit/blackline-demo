@@ -83,19 +83,19 @@
 </section>
 <section style="background:var(--off-white);padding:64px 48px" aria-label="Quote request form and contact information">
   <div class="two-col-contact" style="display:grid;grid-template-columns:1fr 360px;gap:52px;align-items:start">
-    <div style="background:#141414;padding:48px 44px">
+    <div style="background:#1a1a1a;padding:48px 44px;border:1px solid rgba(255,255,255,0.1)">
       <style>
-        #quote-form .form-group{margin-bottom:24px}
-        #quote-form label{display:block;font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:8px}
-        #quote-form input[type="text"],#quote-form input[type="tel"],#quote-form input[type="email"],#quote-form select,#quote-form textarea{width:100%;background:#1a1a1a;border:1px solid rgba(255,255,255,0.12);color:#ffffff;padding:14px 16px;font-family:'Barlow',sans-serif;font-size:15px;font-weight:300;border-radius:0;outline:none;transition:border-color 0.2s;box-sizing:border-box}
-        #quote-form input:focus,#quote-form select:focus,#quote-form textarea:focus{border:1px solid #BBA882}
-        #quote-form select{appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path fill='%23BBA882' d='M6 8L0 0h12z'/></svg>");background-repeat:no-repeat;background-position:right 16px center;padding-right:40px}
+        #quote-form .form-group{margin-bottom:24px !important;display:block !important}
+        #quote-form label{display:block !important;font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.7) !important;margin-bottom:8px !important}
+        #quote-form input[type="text"],#quote-form input[type="tel"],#quote-form input[type="email"],#quote-form select,#quote-form textarea{background:#2a2a2a !important;color:#ffffff !important;border:1px solid rgba(255,255,255,0.25) !important;padding:14px 16px !important;width:100% !important;font-size:15px !important;display:block !important;font-family:'Barlow',sans-serif;font-weight:300;border-radius:0;outline:none;transition:border-color 0.2s;box-sizing:border-box}
+        #quote-form input:focus,#quote-form select:focus,#quote-form textarea:focus{border:1px solid #BBA882 !important}
+        #quote-form select{appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path fill='%23BBA882' d='M6 8L0 0h12z'/></svg>") !important;background-repeat:no-repeat !important;background-position:right 16px center !important;padding-right:40px !important}
         #quote-form textarea{resize:vertical;font-family:'Barlow',sans-serif}
-        #quote-form ::placeholder{color:rgba(255,255,255,0.3)}
-        #submit-btn{width:100%;background:#BBA882;color:#000000;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:15px;letter-spacing:0.18em;text-transform:uppercase;padding:18px;border:none;border-radius:0;cursor:pointer;transition:background 0.2s;margin-top:8px}
-        #submit-btn:hover{background:#D4C4A8}
-        #submit-btn:disabled{opacity:0.6;cursor:not-allowed}
-        #form-success{color:#BBA882;font-size:16px;font-weight:300;line-height:1.6;padding:24px;border-left:3px solid #BBA882;background:#1a1a1a}
+        #quote-form ::placeholder{color:rgba(255,255,255,0.4)}
+        #submit-btn{display:block !important;width:100% !important;background:#BBA882 !important;color:#000000 !important;padding:18px !important;cursor:pointer !important;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:15px;letter-spacing:0.18em;text-transform:uppercase;border:none;border-radius:0;transition:background 0.2s;margin-top:8px}
+        #submit-btn:hover{background:#D4C4A8 !important}
+        #submit-btn:disabled{opacity:0.6;cursor:not-allowed !important}
+        #form-success{color:#BBA882;font-size:16px;font-weight:300;line-height:1.6;padding:24px;border-left:3px solid #BBA882;background:#2a2a2a;margin-top:16px}
         #form-error{color:#e74c3c;font-size:14px;font-weight:300;margin-top:16px;padding:12px 16px;background:rgba(231,76,60,0.08);border-left:3px solid #e74c3c}
       </style>
       <form action="https://api.web3forms.com/submit" method="POST" id="quote-form">
