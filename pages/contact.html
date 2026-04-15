@@ -22,52 +22,62 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@400;600;700;800;900&family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/blackline.css">
 <style>
+  .contact-section { background: #000000; padding: 80px 48px; }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: start;
+  }
   .contact-form-wrap {
-    background: #1a1a1a;
-    padding: 48px 44px;
-    border: 1px solid rgba(255,255,255,0.12);
+    background: #141414;
+    padding: 48px;
+    border: 1px solid rgba(255,255,255,0.08);
   }
   .contact-form-wrap label {
     display: block;
     font-family: 'Barlow Condensed', sans-serif;
     font-size: 11px;
+    font-weight: 600;
     letter-spacing: 0.18em;
     text-transform: uppercase;
     color: rgba(255,255,255,0.6);
     margin-bottom: 8px;
   }
-  .contact-form-wrap .form-group {
-    margin-bottom: 24px;
-  }
+  .contact-form-wrap .form-group { margin-bottom: 24px; }
   .contact-form-wrap input,
   .contact-form-wrap select,
   .contact-form-wrap textarea {
     display: block;
     width: 100%;
-    background: #242424;
+    background: #222222;
     color: #ffffff;
-    border: 1px solid rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,255,255,0.15);
     padding: 14px 16px;
     font-size: 15px;
     font-family: 'Barlow', sans-serif;
+    font-weight: 300;
     outline: none;
     box-sizing: border-box;
+    border-radius: 0;
     -webkit-appearance: none;
     appearance: none;
+    transition: border-color 0.2s;
   }
   .contact-form-wrap input:focus,
   .contact-form-wrap select:focus,
-  .contact-form-wrap textarea:focus {
-    border-color: #BBA882;
+  .contact-form-wrap textarea:focus { border-color: #BBA882; }
+  .contact-form-wrap select {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path fill='%23BBA882' d='M6 8L0 0h12z'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    padding-right: 40px;
   }
-  .contact-form-wrap select option {
-    background: #242424;
-    color: #ffffff;
-  }
-  .contact-form-wrap textarea {
-    resize: vertical;
-    min-height: 140px;
-  }
+  .contact-form-wrap select option { background: #222222; color: #ffffff; }
+  .contact-form-wrap textarea { resize: vertical; min-height: 140px; }
+  .contact-form-wrap ::placeholder { color: rgba(255,255,255,0.35); }
   #submit-btn {
     display: block;
     width: 100%;
@@ -81,19 +91,101 @@
     letter-spacing: 0.18em;
     text-transform: uppercase;
     cursor: pointer;
+    border-radius: 0;
+    margin-top: 8px;
+    transition: background 0.2s;
   }
   #submit-btn:hover { background: #D4C4A8; }
+  #submit-btn:disabled { opacity: 0.6; cursor: not-allowed; }
   #form-success {
     color: #BBA882;
     font-size: 16px;
+    line-height: 1.6;
     padding: 24px;
     border-left: 3px solid #BBA882;
+    background: #141414;
     margin-top: 24px;
   }
   #form-error {
     color: #e74c3c;
     font-size: 14px;
     margin-top: 16px;
+    padding: 12px 16px;
+    background: rgba(231,76,60,0.08);
+    border-left: 3px solid #e74c3c;
+  }
+  .contact-sidebar {
+    background: #0a0a0a;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+  .sidebar-block-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #BBA882;
+    margin-bottom: 14px;
+  }
+  .sidebar-divider {
+    height: 1px;
+    background: rgba(255,255,255,0.08);
+  }
+  .sidebar-phone {
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: #BBA882;
+    text-decoration: none;
+    display: block;
+    line-height: 1.1;
+    margin-bottom: 8px;
+  }
+  .sidebar-sub {
+    font-family: 'Barlow', sans-serif;
+    font-size: 13px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 12px;
+  }
+  .sidebar-email {
+    font-family: 'Barlow', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #ffffff;
+    text-decoration: none;
+    word-break: break-all;
+  }
+  .sidebar-email:hover { color: #BBA882; }
+  .sidebar-text {
+    font-family: 'Barlow', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.7;
+  }
+  .sidebar-cities {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .sidebar-cities a {
+    font-family: 'Barlow', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .sidebar-cities a:hover { color: #BBA882; }
+  @media (max-width: 900px) {
+    .contact-section { padding: 56px 24px; }
+    .contact-grid { grid-template-columns: 1fr; gap: 24px; }
+    .contact-form-wrap { padding: 32px 24px; }
+    .contact-sidebar { padding: 32px 24px; }
   }
 </style>
 </head>
@@ -154,41 +246,43 @@
   <nav aria-label="Breadcrumb" class="breadcrumb"><a href="/">Home</a><span class="breadcrumb-sep" aria-hidden="true">/</span><span aria-current="page">Request a Quote</span></nav>
   <div class="section-label" aria-hidden="true"><div class="section-label-line"></div><span class="section-label-text">Get in Touch</span></div>
   <h1 id="contact-h1">Request a Quote — We Respond Within <em>1 Business Day.</em></h1>
-  <p>Fill out the form below with your project details and we'll get back to you with a clear response. If your project is urgent, call us directly.</p>
+  <p>Fill out the form below with your project details and we'll get back to you with a clear response. If your project is urgent, call us directly at <a href="tel:6025169180" style="color:#BBA882;text-decoration:none;font-weight:500">602.516.9180</a>.</p>
 </section>
-<section style="background:#0a0a0a;padding:64px 48px" aria-label="Quote request form and contact information">
-  <div class="two-col-contact" style="display:grid;grid-template-columns:1fr 360px;gap:52px;align-items:start">
+
+<section class="contact-section" aria-label="Quote request form and contact information">
+  <div class="contact-grid">
+
     <div class="contact-form-wrap">
       <form action="https://api.web3forms.com/submit" method="POST" id="quote-form">
         <input type="hidden" name="access_key" value="b1968e4f-a691-484a-af0e-36099d42f643">
         <input type="hidden" name="subject" value="New Quote Request — Blackline Demo">
         <input type="hidden" name="from_name" value="Blackline Demo Website">
-        <input type="hidden" name="redirect" value="https://blackline-demo.pages.dev/thanks">
+        <input type="hidden" name="redirect" value="https://www.blacklinedemo.com/thanks">
         <input type="checkbox" name="botcheck" style="display:none">
 
         <div class="form-group">
-          <label>Full Name *</label>
-          <input type="text" name="name" required placeholder="First and Last Name">
+          <label for="name">Full Name *</label>
+          <input id="name" type="text" name="name" required placeholder="First and Last Name">
         </div>
 
         <div class="form-group">
-          <label>Company Name *</label>
-          <input type="text" name="company" required placeholder="Your Company">
+          <label for="company">Company Name *</label>
+          <input id="company" type="text" name="company" required placeholder="Your Company">
         </div>
 
         <div class="form-group">
-          <label>Phone Number *</label>
-          <input type="tel" name="phone" required placeholder="(000) 000-0000">
+          <label for="phone">Phone Number *</label>
+          <input id="phone" type="tel" name="phone" required placeholder="(000) 000-0000">
         </div>
 
         <div class="form-group">
-          <label>Email Address *</label>
-          <input type="email" name="email" required placeholder="you@company.com">
+          <label for="email">Email Address *</label>
+          <input id="email" type="email" name="email" required placeholder="you@company.com">
         </div>
 
         <div class="form-group">
-          <label>Service Needed *</label>
-          <select name="service" required>
+          <label for="service">Service Needed *</label>
+          <select id="service" name="service" required>
             <option value="" disabled selected>Select a service...</option>
             <option>Mitigation / Demo</option>
             <option>Interior Demolition</option>
@@ -199,8 +293,8 @@
         </div>
 
         <div class="form-group">
-          <label>Project City *</label>
-          <select name="city" required>
+          <label for="city">Project City *</label>
+          <select id="city" name="city" required>
             <option value="" disabled selected>Select a city...</option>
             <option>Phoenix</option>
             <option>Mesa</option>
@@ -213,8 +307,8 @@
         </div>
 
         <div class="form-group">
-          <label>Project Description *</label>
-          <textarea name="message" required rows="5" placeholder="Describe your project scope, timeline, and any relevant details..."></textarea>
+          <label for="message">Project Description *</label>
+          <textarea id="message" name="message" required rows="5" placeholder="Describe your project scope, timeline, and any relevant details..."></textarea>
         </div>
 
         <button type="submit" id="submit-btn">Submit My Request →</button>
@@ -267,13 +361,46 @@
         })();
       </script>
     </div>
-    <div style="display:flex;flex-direction:column;gap:16px">
-      <div style="background:var(--black);padding:32px"><div style="font-family:var(--font-head);font-size:13px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--tan);margin-bottom:16px">Prefer to Call?</div><a href="tel:6025169180" style="font-family:var(--font-head);font-size:28px;font-weight:700;color:var(--white);display:block;text-decoration:none" aria-label="Call Blackline Demo">602.516.9180</a><div style="font-size:13px;font-weight:300;color:rgba(255,255,255,0.35);margin-top:6px">Call or text — we answer.</div><div style="margin-top:16px;padding-top:16px;border-top:1px solid rgba(255,255,255,0.08)"><a href="mailto:blacklinedemolition@gmail.com" style="font-size:13px;font-weight:300;color:rgba(255,255,255,0.4);text-decoration:none">blacklinedemolition@gmail.com</a></div></div>
-      <div style="background:var(--white);border:1px solid var(--gray-200);padding:28px"><div style="font-family:var(--font-head);font-size:13px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--tan);margin-bottom:12px">Response Time</div><div style="font-size:14px;font-weight:300;color:var(--gray-600);line-height:1.65">Quote requests: within 1 business day.<br>Phone calls: we answer directly.<br>Urgent scopes: call us.</div></div>
-      <div style="background:var(--off-white);border:1px solid var(--gray-200);padding:28px"><div style="font-family:var(--font-head);font-size:13px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--tan);margin-bottom:12px">Cities We Serve</div><div style="display:flex;flex-direction:column;gap:6px"><a href="/phoenix-demolition-contractor" style="font-size:14px;font-weight:300;color:var(--gray-600);text-decoration:none;transition:color 0.2s" onmouseenter="this.style.color='var(--tan)'" onmouseleave="this.style.color='var(--gray-600)'">Phoenix</a><a href="/mesa-demolition-contractor" style="font-size:14px;font-weight:300;color:var(--gray-600);text-decoration:none;transition:color 0.2s" onmouseenter="this.style.color='var(--tan)'" onmouseleave="this.style.color='var(--gray-600)'">Mesa</a><a href="/scottsdale-demolition-contractor" style="font-size:14px;font-weight:300;color:var(--gray-600);text-decoration:none;transition:color 0.2s" onmouseenter="this.style.color='var(--tan)'" onmouseleave="this.style.color='var(--gray-600)'">Scottsdale</a><a href="/gilbert-demolition-contractor" style="font-size:14px;font-weight:300;color:var(--gray-600);text-decoration:none;transition:color 0.2s" onmouseenter="this.style.color='var(--tan)'" onmouseleave="this.style.color='var(--gray-600)'">Gilbert</a><a href="/chandler-demolition-contractor" style="font-size:14px;font-weight:300;color:var(--gray-600);text-decoration:none;transition:color 0.2s" onmouseenter="this.style.color='var(--tan)'" onmouseleave="this.style.color='var(--gray-600)'">Chandler</a><a href="/casa-grande-demolition-contractor" style="font-size:14px;font-weight:300;color:var(--gray-600);text-decoration:none;transition:color 0.2s" onmouseenter="this.style.color='var(--tan)'" onmouseleave="this.style.color='var(--gray-600)'">Casa Grande</a></div></div>
-    </div>
+
+    <aside class="contact-sidebar" aria-label="Contact information">
+
+      <div>
+        <div class="sidebar-block-title">Prefer to Call?</div>
+        <a href="tel:6025169180" class="sidebar-phone" aria-label="Call Blackline Demo">602.516.9180</a>
+        <div class="sidebar-sub">Call or text — we answer.</div>
+        <a href="mailto:blacklinedemolition@gmail.com" class="sidebar-email">blacklinedemolition@gmail.com</a>
+      </div>
+
+      <div class="sidebar-divider"></div>
+
+      <div>
+        <div class="sidebar-block-title">Response Time</div>
+        <div class="sidebar-text">
+          Quote requests: within 1 business day.<br>
+          Phone calls: we answer directly.<br>
+          Urgent scopes: call us.
+        </div>
+      </div>
+
+      <div class="sidebar-divider"></div>
+
+      <div>
+        <div class="sidebar-block-title">Cities We Serve</div>
+        <div class="sidebar-cities">
+          <a href="/phoenix-demolition-contractor">Phoenix</a>
+          <a href="/mesa-demolition-contractor">Mesa</a>
+          <a href="/scottsdale-demolition-contractor">Scottsdale</a>
+          <a href="/gilbert-demolition-contractor">Gilbert</a>
+          <a href="/chandler-demolition-contractor">Chandler</a>
+          <a href="/casa-grande-demolition-contractor">Casa Grande</a>
+        </div>
+      </div>
+
+    </aside>
+
   </div>
 </section>
+
 </main>
 
 <div class="footer-strip">
